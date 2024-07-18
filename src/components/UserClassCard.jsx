@@ -2,7 +2,6 @@ import React from "react";
 
 export class UserClassCard extends React.Component {
   render() {
-    console.log(this);
     return (
       <div class="card">
         <h2 class="name">{this.props.name}</h2>
