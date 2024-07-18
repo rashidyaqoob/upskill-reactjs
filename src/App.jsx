@@ -2,6 +2,8 @@ import "./user.css";
 import user from "./user.json";
 import UserCard from "./components/UserCard";
 import { UserClassCard } from "./components/UserClassCard";
+import NameCounter from "./components/NameCounter";
+import { NameCounterClass } from "./components/NameCounterClass";
 
 function App() {
   console.log(user);
@@ -22,6 +24,13 @@ function App() {
         phoneNumber={user.phoneNumber}
         address={user.address}
       />
+
+      <br />
+
+      <NameCounter />
+      <br />
+
+      <NameCounterClass />
     </div>
   );
 }
