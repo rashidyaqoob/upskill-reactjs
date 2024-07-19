@@ -4,6 +4,7 @@ import UserCard from "./components/UserCard";
 import { UserClassCard } from "./components/UserClassCard";
 import NameCounter from "./components/NameCounter";
 import { NameCounterClass } from "./components/NameCounterClass";
+import CustomArrayHook from "./components/CustomArrayHook";
 
 function App() {
   console.log(user);
@@ -31,6 +32,9 @@ function App() {
       <br />
 
       <NameCounterClass />
+
+      <br />
+      <CustomArrayHook />
     </div>
   );
 }
