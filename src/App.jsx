@@ -4,6 +4,7 @@ import UserCard from "./components/UserCard";
 import { UserClassCard } from "./components/UserClassCard";
 import NameCounter from "./components/NameCounter";
 import { NameCounterClass } from "./components/NameCounterClass";
+import StateReducer from "./components/StateReducer";
 
 function App() {
   console.log(user);
@@ -31,6 +32,10 @@ function App() {
       <br />
 
       <NameCounterClass />
+
+      <br />
+
+      <StateReducer />
     </div>
   );
 }
