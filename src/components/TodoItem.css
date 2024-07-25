@@ -1,0 +1,52 @@
+/* TodoItem.css */
+.todo-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item-container li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-checkbox {
+  margin-right: 10px;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0 10px;
+  font-size: 1rem;
+}
+
+.todo-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-button:hover {
+  background-color: #0056b3;
+}
+
+.todo-button.delete {
+  background-color: #dc3545;
+}
+
+.todo-button.delete:hover {
+  background-color: #c82333;
+}

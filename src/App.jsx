@@ -4,6 +4,7 @@ import UserCard from "./components/UserCard";
 import { UserClassCard } from "./components/UserClassCard";
 import NameCounter from "./components/NameCounter";
 import { NameCounterClass } from "./components/NameCounterClass";
+import AdvancedTodoList from "./components/AdvancedTodoList";
 
 function App() {
   console.log(user);
@@ -31,6 +32,7 @@ function App() {
       <br />
 
       <NameCounterClass />
+      <AdvancedTodoList />
     </div>
   );
 }
