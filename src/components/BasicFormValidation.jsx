@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./BasicFormValidation.css";
 
 const BasicFormValidation = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +9,6 @@ const BasicFormValidation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
-    console.log(Object.keys(validationErrors));
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
@@ -52,34 +52,46 @@ const BasicFormValidation = () => {
     return errors;
   };
   return (
-    <form onSubmit={handleSubmit} noValidate>
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        required
-        id="email"
-        value={email}
-        placeholder="Enter you email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        required
-        id="password"
-        value={password}
-        placeholder="Enter your password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      {errors.password && (
-        <ul style={{ color: "red" }}>
-          {errors.password.split("\n").map((error, index) => (
-            <li key={index}>{error}</li>
-          ))}
-        </ul>
-      )}
-      <input type="submit" value={"Submit"} />
+    <form onSubmit={handleSubmit} noValidate className="form-container">
+      <div>
+        <label htmlFor="email" className="form-label">
+          Email
+        </label>
+        <input
+          type="email"
+          required
+          id="email"
+          value={email}
+          placeholder="Enter your email"
+          onChange={(e) => setEmail(e.target.value)}
+          className="form-input"
+        />
+        {errors.email && <p className="form-error">{errors.email}</p>}
+      </div>
+
+      <div>
+        <label htmlFor="password" className="form-label">
+          Password
+        </label>
+        <input
+          type="password"
+          required
+          id="password"
+          value={password}
+          placeholder="Enter your password"
+          onChange={(e) => setPassword(e.target.value)}
+          className="form-input"
+        />
+        {errors.password && (
+          <ul className="form-error">
+            {errors.password.split("\n").map((error, index) => (
+              <li key={index}>{error}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <input type="submit" value="Submit" className="form-submit" />
     </form>
   );
 };
