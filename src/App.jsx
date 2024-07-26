@@ -17,12 +17,12 @@ const App = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    const fectchData = async () => {
+    const fetchData = async () => {
       const res = await fetch(url);
       const data = await res.json();
       setData(data);
     };
-    fectchData();
+    fetchData();
   }, [url]);
 
   return (
@@ -53,8 +53,6 @@ const App = () => {
         <Route path="/users/:id" element={<User />} />
         <Route path="/todos" element={<Todos data={data} />} />
       </Routes>
-
-      {/* <RoutesForPages /> */}
     </div>
   );
 };
