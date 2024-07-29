@@ -1,0 +1,60 @@
+#scrollableDiv {
+  padding: 10px;
+  background-color: #e0f7fa;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.grid-item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
+
+.post-content {
+  padding: 15px;
+  background-color: #f9fbe7;
+}
+
+.post-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: #00796b;
+}
+
+.post-content p {
+  color: #004d40;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.post-content a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #00796b;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.post-content a:hover {
+  background-color: #004d40;
+}
