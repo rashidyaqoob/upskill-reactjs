@@ -1,36 +1,67 @@
-import "./user.css";
-import user from "./user.json";
-import UserCard from "./components/UserCard";
-import { UserClassCard } from "./components/UserClassCard";
-import NameCounter from "./components/NameCounter";
-import { NameCounterClass } from "./components/NameCounterClass";
+import React from "react";
+import { useState } from "react";
+// import "./components/form.css";
+import useLocalStorage from "./components/useLocalStorage";
 
 function App() {
-  console.log(user);
+  const [firstName, setFirstName] = useState("initialvalue");
+  const [lastName, setLastName] = useState("initialvalue");
+  const [storedFirstName, setStoredFirstName] = useLocalStorage(
+    "FIRST_NAME",
+    ""
+  );
+  const [storedLastName, setStoredLastName] = useLocalStorage("LAST_NAME", "");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStoredFirstName(firstName);
+    setStoredLastName(lastName);
+  };
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    setFirstName("");
+    setLastName("");
+    setStoredFirstName("");
+    setStoredLastName("");
+  };
+
   return (
     <div className="App">
-      <UserCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <UserClassCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <NameCounter />
-      <br />
-
-      <NameCounterClass />
+      <a href="">learn react</a>
+      <form className="storage-form" onSubmit={handleSubmit}>
+        <label htmlFor="firstname">First Name</label>
+        <input
+          id="firstname"
+          type="text"
+          required
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="Enter your first name"
+        />
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          required
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          placeholder="Enter your last name"
+        />
+        <input type="submit" value="Submit" />
+        <button type="button" onClick={handleReset}>
+          Reset
+        </button>
+      </form>
+      <div className="stored-values">
+        <h3>Stored Values</h3>
+        <p>
+          First Name: <span>{storedFirstName}</span>
+        </p>
+        <p>
+          Last Name: <span>{storedLastName}</span>
+        </p>
+      </div>
     </div>
   );
 }

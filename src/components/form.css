@@ -1,0 +1,102 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  font-family: Arial, sans-serif;
+}
+
+.storage-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.storage-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+
+.storage-form input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.storage-form input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.storage-form input::placeholder {
+  color: #aaa;
+}
+
+.storage-form input[type="submit"],
+.storage-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.storage-form input[type="submit"]:hover,
+.storage-form button:hover {
+  background-color: #0056b3;
+}
+
+.storage-form button {
+  background-color: #ff4d4d;
+  margin-left: 0.5rem;
+}
+
+.storage-form button:hover {
+  background-color: #e60000;
+}
+
+.stored-values {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+.stored-values h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.stored-values p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.stored-values span {
+  font-weight: bold;
+  color: #333;
+}
