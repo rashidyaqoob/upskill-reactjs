@@ -1,9 +1,9 @@
-import Form from "./components/Form";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <ScrollTop />
     </div>
   );
 }
