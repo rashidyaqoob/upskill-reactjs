@@ -1,0 +1,43 @@
+.virtual-list-container {
+  height: 600px;
+  overflow: auto;
+  position: relative;
+  background: linear-gradient(to bottom, #f0f4f7, #ffffff);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.virtual-list-inner {
+  width: 100%;
+  position: relative;
+}
+
+.virtual-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.virtual-row:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.virtual-row span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}

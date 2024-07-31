@@ -1,36 +1,13 @@
-import "./user.css";
-import user from "./user.json";
-import UserCard from "./components/UserCard";
-import { UserClassCard } from "./components/UserClassCard";
-import NameCounter from "./components/NameCounter";
-import { NameCounterClass } from "./components/NameCounterClass";
+import LargeLists from "./components/LargeLists";
 
 function App() {
-  console.log(user);
+  const items = Array.from(
+    { length: 10000 },
+    (_, index) => `Item ${index + 1}`
+  );
   return (
     <div className="App">
-      <UserCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <UserClassCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <NameCounter />
-      <br />
-
-      <NameCounterClass />
+      <LargeLists items={items} />
     </div>
   );
 }
