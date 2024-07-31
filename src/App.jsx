@@ -1,37 +1,34 @@
-import "./user.css";
-import user from "./user.json";
-import UserCard from "./components/UserCard";
-import { UserClassCard } from "./components/UserClassCard";
-import NameCounter from "./components/NameCounter";
-import { NameCounterClass } from "./components/NameCounterClass";
+import React, { useReducer } from "react";
+import ContextModule from "./components/ContextModule";
+import GlobalContext from "./components/GlobalContext";
+
+function reducer(state, action) {
+  console.log(action);
+  switch (action.type) {
+    case "increment":
+      return { ...state, count: state.count + action.count };
+    case "decrement":
+      return { ...state, count: state.count - action.count };
+    case "reset":
+      return { ...state, count: action.count };
+    default:
+      return state;
+  }
+}
 
 function App() {
-  console.log(user);
+  const initialCount = 10;
+  const [state, dispatch] = useReducer(reducer, { count: initialCount });
+
   return (
-    <div className="App">
-      <UserCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <UserClassCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <NameCounter />
-      <br />
-
-      <NameCounterClass />
-    </div>
+    <GlobalContext.Provider
+      value={{
+        countState: state.count,
+        countDispatch: dispatch,
+      }}
+    >
+      <ContextModule step={5} initialCount={initialCount} />
+    </GlobalContext.Provider>
   );
 }
 
