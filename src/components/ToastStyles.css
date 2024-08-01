@@ -1,0 +1,120 @@
+.toast-container {
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  width: calc(100%-50px);
+  height: 500px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.toast {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  position: absolute;
+}
+
+.toast-top-left {
+  top: 0;
+  left: 0;
+}
+
+.toast-top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-top-right {
+  top: 0;
+  right: 0;
+}
+
+.toast-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.toast-bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+div {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: calc(100% - 16px);
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+input[type="submit"] {
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
+}
