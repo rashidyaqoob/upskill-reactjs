@@ -1,37 +1,24 @@
-import "./user.css";
-import user from "./user.json";
-import UserCard from "./components/UserCard";
-import { UserClassCard } from "./components/UserClassCard";
-import NameCounter from "./components/NameCounter";
-import { NameCounterClass } from "./components/NameCounterClass";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Posts from "./components/Posts";
+import NewPost from "./components/NewPost";
+import EditPost from "./components/EditPost";
+import { PostsProvider } from "./contexts/PostsContext";
+import "./components/Form.css";
+import Post from "./components/Post";
 
 function App() {
-  console.log(user);
   return (
-    <div className="App">
-      <UserCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <UserClassCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <NameCounter />
-      <br />
-
-      <NameCounterClass />
-    </div>
+    <PostsProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Posts />} />
+          <Route path="/new" element={<NewPost />} />
+          <Route path="/edit/:id" element={<EditPost />} />
+          <Route path="/posts/:id" element={<Post />} />
+        </Routes>
+      </Router>
+    </PostsProvider>
   );
 }
 
