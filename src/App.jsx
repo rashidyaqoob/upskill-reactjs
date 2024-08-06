@@ -1,36 +1,28 @@
-import "./user.css";
-import user from "./user.json";
-import UserCard from "./components/UserCard";
-import { UserClassCard } from "./components/UserClassCard";
-import NameCounter from "./components/NameCounter";
-import { NameCounterClass } from "./components/NameCounterClass";
+import React from "react";
+import {
+  Toggle,
+  ToggleButton,
+  ToggleOff,
+  ToggleOn,
+} from "./components/Toggle.tsx";
 
 function App() {
-  console.log(user);
   return (
     <div className="App">
-      <UserCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <UserClassCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <NameCounter />
-      <br />
-
-      <NameCounterClass />
+      <div className="toggle-container">
+        <Toggle>
+          <ToggleOn>
+            <span className="toggle-text">Toggle is On</span>
+            <p>This is some text that is shown when the toggle is ON.</p>
+            <img src="https://via.placeholder.com/150" alt="Placeholder" />
+          </ToggleOn>
+          <ToggleOff>
+            <span className="toggle-text">Toggle is Off</span>
+            <p>This is some text that is shown when the toggle is OFF.</p>
+          </ToggleOff>
+          <ToggleButton />
+        </Toggle>
+      </div>
     </div>
   );
 }
