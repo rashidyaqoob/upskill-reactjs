@@ -1,38 +1,18 @@
-import "./user.css";
-import user from "./user.json";
-import UserCard from "./components/UserCard";
-import { UserClassCard } from "./components/UserClassCard";
-import NameCounter from "./components/NameCounter";
-import { NameCounterClass } from "./components/NameCounterClass";
+import {
+  Toggle,
+  ToggleOn,
+  ToggleOff,
+  ToggleButton,
+} from "./components/Toggle.tsx";
 
-function App() {
-  console.log(user);
+const App = () => {
   return (
-    <div className="App">
-      <UserCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <UserClassCard
-        name={user.name}
-        age={user.age}
-        phoneNumber={user.phoneNumber}
-        address={user.address}
-      />
-
-      <br />
-
-      <NameCounter />
-      <br />
-
-      <NameCounterClass />
-    </div>
+    <Toggle>
+      <ToggleOn>Switch is on!</ToggleOn>
+      <ToggleOff>Switch is off!</ToggleOff>
+      <ToggleButton />
+    </Toggle>
   );
-}
+};
 
 export default App;
